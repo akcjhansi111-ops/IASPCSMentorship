@@ -4,129 +4,166 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>IAS & PCS Mentorship | Online Test</title>
+<title>IAS & PCS Mentorship | Test Series</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f3f6fb;
+    font-family:Arial, sans-serif;
+    background:#f4f7fb;
     color:#172033;
 }
 
 header{
     background:#14213d;
     color:white;
-    padding:25px 15px;
     text-align:center;
+    padding:25px 15px;
 }
 
 header h1{
     font-size:28px;
+    margin-bottom:8px;
 }
 
 header p{
-    margin-top:8px;
+    font-size:16px;
 }
 
 .container{
-    max-width:950px;
+    max-width:1000px;
     margin:auto;
-    padding:20px;
+    padding:25px 15px;
 }
 
-.card{
+.hero{
     background:white;
-    padding:25px;
-    margin-bottom:20px;
-    border-radius:16px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    border-radius:20px;
+    padding:30px 25px;
+    margin-bottom:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
-h2{
+.hero h2{
+    font-size:32px;
     margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+}
+
+.section-title{
+    font-size:30px;
+    margin:25px 0;
 }
 
 .exam-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    gap:20px;
 }
 
-.exam{
-    border:2px solid #e2e7ef;
-    padding:20px;
-    border-radius:14px;
+.exam-card{
+    background:white;
+    border:3px solid #e1e6ef;
+    border-radius:20px;
+    padding:30px 20px;
     text-align:center;
     cursor:pointer;
-    transition:.2s;
+    transition:.25s;
 }
 
-.exam:hover{
+.exam-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
     border-color:#14213d;
-    transform:translateY(-2px);
 }
 
-.exam h3{
+.exam-icon{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.exam-card h3{
+    font-size:27px;
     margin-bottom:8px;
 }
 
+.exam-card p{
+    font-size:17px;
+    color:#555;
+}
+
 button{
-    border:0;
+    border:none;
     background:#14213d;
     color:white;
-    padding:12px 22px;
-    border-radius:9px;
-    font-size:15px;
+    padding:13px 24px;
+    border-radius:10px;
+    font-size:16px;
     cursor:pointer;
+    margin-top:18px;
 }
 
 button:hover{
     opacity:.9;
 }
 
-select{
-    width:100%;
-    padding:13px;
-    margin:10px 0 18px;
-    border:1px solid #ccd3df;
-    border-radius:8px;
-    font-size:16px;
-}
-
-.hidden{
-    display:none;
-}
-
-.test-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:10px;
+.back-btn{
+    background:#555;
     margin-bottom:20px;
 }
 
-.timer{
-    background:#14213d;
-    color:white;
-    padding:10px 15px;
-    border-radius:8px;
+.test-list{
+    display:grid;
+    gap:15px;
+}
+
+.test-card{
+    background:white;
+    border-radius:16px;
+    padding:22px;
+    box-shadow:0 5px 18px rgba(0,0,0,.07);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.test-card h3{
+    margin-bottom:7px;
+}
+
+.test-card p{
+    color:#666;
+}
+
+.test-card button{
+    margin:0;
+    white-space:nowrap;
+}
+
+.quiz-box{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.progress{
+    margin-bottom:20px;
     font-weight:bold;
 }
 
-.question-number{
-    color:#596579;
-    margin-bottom:10px;
-}
-
 .question{
-    font-size:20px;
+    font-size:21px;
     font-weight:bold;
     line-height:1.5;
     margin-bottom:20px;
@@ -134,66 +171,55 @@ select{
 
 .option{
     display:block;
-    padding:14px;
+    width:100%;
+    text-align:left;
+    background:#f4f7fb;
+    color:#172033;
+    border:2px solid #e0e5ed;
     margin:10px 0;
-    background:#f2f5f9;
-    border-radius:9px;
-    cursor:pointer;
 }
 
 .option:hover{
-    background:#e5eaf1;
+    background:#e9eef7;
 }
 
-.option input{
-    margin-right:10px;
+.option.selected{
+    background:#dce8ff;
+    border-color:#14213d;
 }
 
-.navigation{
+.quiz-actions{
     display:flex;
     justify-content:space-between;
-    margin-top:20px;
-}
-
-.progress{
-    height:8px;
-    background:#e1e5eb;
-    border-radius:10px;
-    margin-bottom:20px;
-    overflow:hidden;
-}
-
-.progress-bar{
-    height:100%;
-    width:0%;
-    background:#14213d;
-}
-
-.result-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
     gap:10px;
-    margin:20px 0;
 }
 
-.result-box{
-    background:#f2f5f9;
-    padding:18px 8px;
+.result{
     text-align:center;
-    border-radius:10px;
 }
 
-.result-box strong{
-    display:block;
-    font-size:23px;
-    margin-bottom:5px;
+.result h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.score{
+    font-size:50px;
+    font-weight:bold;
+    color:#14213d;
+    margin:20px;
+}
+
+.answer-review{
+    text-align:left;
+    margin-top:25px;
 }
 
 .review-item{
+    background:#f7f7f7;
     padding:15px;
     margin:12px 0;
     border-radius:10px;
-    background:#f4f6f9;
 }
 
 .correct{
@@ -204,91 +230,97 @@ select{
     border-left:5px solid red;
 }
 
-.skipped{
-    border-left:5px solid orange;
+.hidden{
+    display:none;
 }
 
 footer{
+    margin-top:40px;
     background:#14213d;
     color:white;
     text-align:center;
-    padding:25px;
-    margin-top:30px;
+    padding:25px 15px;
+    line-height:1.8;
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
 
     .exam-grid{
         grid-template-columns:1fr;
     }
 
-    .result-grid{
-        grid-template-columns:repeat(2,1fr);
+    .hero h2{
+        font-size:28px;
     }
 
-    header h1{
-        font-size:23px;
+    .section-title{
+        font-size:27px;
     }
 
-    .question{
-        font-size:18px;
+    .test-card{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
+    .test-card button{
+        width:100%;
+    }
+
+    .quiz-actions button{
+        width:48%;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<h1>IAS & PCS Mentorship</h1>
-
-<p>UPSC • BPSC • UPPSC • SSC • State PCS</p>
-
-<p style="margin-top:10px;font-size:14px;">
-Our Guidance + Your Hard Work = Success
-</p>
-
+    <h1>IAS & PCS Mentorship</h1>
+    <p>UPSC • BPSC • UPPSC • SSC • State PCS</p>
 </header>
-
 
 <div class="container">
 
 <!-- HOME -->
 
-<section id="home" class="card">
+<section id="home">
 
-<h2>📚 Competitive Exam Test Series</h2>
+<div class="hero">
+    <h2>📚 Competitive Exam Test Series</h2>
 
-<p style="line-height:1.6;margin-bottom:20px;">
-Practice exam-oriented MCQs for UPSC, BPSC, UPPSC, SSC
-and other competitive examinations.
-</p>
+    <p>
+        Practice exam-oriented MCQs for UPSC, BPSC, UPPSC,
+        SSC and other competitive examinations.
+    </p>
+</div>
 
-<h2>Choose Your Exam</h2>
+<h2 class="section-title">Choose Your Exam</h2>
 
 <div class="exam-grid">
 
-<div class="exam" onclick="selectExam('UPSC')">
-<h3>🇮🇳 UPSC</h3>
-<p>Civil Services</p>
+<div class="exam-card" onclick="showTests('UPSC')">
+    <div class="exam-icon">🇮🇳</div>
+    <h3>UPSC</h3>
+    <p>Civil Services</p>
 </div>
 
-<div class="exam" onclick="selectExam('BPSC')">
-<h3>🔵 BPSC</h3>
-<p>Bihar Civil Services</p>
+<div class="exam-card" onclick="showTests('BPSC')">
+    <div class="exam-icon">🔵</div>
+    <h3>BPSC</h3>
+    <p>Bihar Civil Services</p>
 </div>
 
-<div class="exam" onclick="selectExam('UPPSC')">
-<h3>🟢 UPPSC</h3>
-<p>PCS</p>
+<div class="exam-card" onclick="showTests('UPPSC')">
+    <div class="exam-icon">🟢</div>
+    <h3>UPPSC</h3>
+    <p>PCS</p>
 </div>
 
-<div class="exam" onclick="selectExam('SSC')">
-<h3>🟠 SSC</h3>
-<p>SSC Exams</p>
+<div class="exam-card" onclick="showTests('SSC')">
+    <div class="exam-icon">🟠</div>
+    <h3>SSC</h3>
+    <p>SSC Exams</p>
 </div>
 
 </div>
@@ -296,122 +328,65 @@ and other competitive examinations.
 </section>
 
 
-<!-- SUBJECT -->
+<!-- TEST LIST -->
 
-<section id="subjectSection" class="card hidden">
+<section id="testSection" class="hidden">
 
-<h2 id="examTitle">Select Subject</h2>
+<button class="back-btn" onclick="goHome()">← Back to Exams</button>
 
-<label>Subject</label>
+<h2 id="examTitle" class="section-title"></h2>
 
-<select id="subject">
-
-<option value="General Studies">General Studies</option>
-<option value="History">History</option>
-<option value="Geography">Geography</option>
-<option value="Polity">Indian Polity</option>
-<option value="Economy">Economy</option>
-<option value="Science">Science</option>
-<option value="Current Affairs">Current Affairs</option>
-
-</select>
-
-<button onclick="startTest()">
-Start Test
-</button>
+<div id="testList" class="test-list"></div>
 
 </section>
 
 
-<!-- TEST -->
+<!-- QUIZ -->
 
-<section id="testSection" class="card hidden">
+<section id="quizSection" class="hidden">
 
-<div class="test-header">
+<button class="back-btn" onclick="backToTests()">← Back to Tests</button>
 
-<div>
-<h2 id="testTitle">Online Test</h2>
-<p>20 Questions • 20 Minutes</p>
-</div>
+<div class="quiz-box">
 
-<div class="timer">
-⏱ <span id="timer">20:00</span>
-</div>
+<div class="progress" id="progress"></div>
 
-</div>
+<div class="question" id="question"></div>
 
-<div class="progress">
+<div id="options"></div>
 
-<div id="progressBar" class="progress-bar"></div>
+<div class="quiz-actions">
 
-</div>
+<button onclick="previousQuestion()">← Previous</button>
 
-<div id="questionArea"></div>
-
-<div class="navigation">
-
-<button onclick="previousQuestion()">
-← Previous
-</button>
-
-<button onclick="nextQuestion()">
-Next →
-</button>
+<button onclick="nextQuestion()">Next →</button>
 
 </div>
 
-<br>
-
-<button onclick="submitTest()" style="background:#8b0000;">
-Submit Test
-</button>
+</div>
 
 </section>
 
 
 <!-- RESULT -->
 
-<section id="resultSection" class="card hidden">
+<section id="resultSection" class="hidden">
 
-<h2>🎉 Test Result</h2>
+<div class="quiz-box result">
 
-<div class="result-grid">
+<h2>🎉 Test Completed</h2>
 
-<div class="result-box">
-<strong id="score">0</strong>
-Score
-</div>
+<p>Your Score</p>
 
-<div class="result-box">
-<strong id="correct">0</strong>
-Correct
-</div>
+<div class="score" id="score"></div>
 
-<div class="result-box">
-<strong id="wrong">0</strong>
-Wrong
-</div>
+<p id="resultMessage"></p>
 
-<div class="result-box">
-<strong id="skipped">0</strong>
-Skipped
-</div>
+<button onclick="backToTests()">View Test Series</button>
+
+<div class="answer-review" id="answerReview"></div>
 
 </div>
-
-<p id="accuracy"></p>
-
-<br>
-
-<button onclick="showReview()">
-📖 Review Answers
-</button>
-
-<button onclick="restartTest()">
-🔄 Reattempt
-</button>
-
-<div id="review" style="margin-top:20px;"></div>
 
 </section>
 
@@ -420,9 +395,7 @@ Skipped
 
 <footer>
 
-© 2026 IAS & PCS Mentorship
-
-<br><br>
+© 2026 IAS & PCS Mentorship<br>
 
 Our Guidance + Your Hard Work = Success
 
@@ -431,133 +404,62 @@ Our Guidance + Your Hard Work = Success
 
 <script>
 
-/* =========================
-QUESTION BANK
-========================= */
+const tests = {
 
-const questions = [
-
+UPSC:[
 {
-q:"Which Article of the Indian Constitution deals with Fundamental Rights?",
-options:[
-"Article 12-35",
-"Article 36-51",
-"Article 52-78",
-"Article 80-100"
-],
-answer:0
-},
-
+title:"UPSC Test 1 – Indian Polity",
+questions:[
 {
-q:"The Constitution of India came into force on:",
+q:"The Constitution of India was adopted on:",
 options:[
 "15 August 1947",
 "26 November 1949",
 "26 January 1950",
-"2 October 1950"
+"15 August 1950"
 ],
-answer:2
+answer:1,
+explanation:"The Constitution of India was adopted by the Constituent Assembly on 26 November 1949."
 },
-
 {
-q:"Who is known as the Father of the Indian Constitution?",
+q:"Who is the constitutional head of India?",
 options:[
-"Mahatma Gandhi",
-"Jawaharlal Nehru",
-"Dr. B. R. Ambedkar",
-"Rajendra Prasad"
+"Prime Minister",
+"President",
+"Chief Justice of India",
+"Vice President"
 ],
-answer:2
+answer:1,
+explanation:"The President is the constitutional head of the Union."
 },
-
 {
-q:"Which river is known as the Sorrow of Bihar?",
-options:[
-"Ganga",
-"Kosi",
-"Son",
-"Gandak"
-],
-answer:1
-},
-
-{
-q:"Which is the largest planet in the Solar System?",
-options:[
-"Earth",
-"Mars",
-"Jupiter",
-"Saturn"
-],
-answer:2
-},
-
-{
-q:"The Battle of Plassey was fought in:",
-options:[
-"1757",
-"1764",
-"1857",
-"1773"
-],
-answer:0
-},
-
-{
-q:"The Directive Principles of State Policy are contained in:",
+q:"Fundamental Rights are contained in which Part of the Constitution?",
 options:[
 "Part II",
 "Part III",
 "Part IV",
 "Part V"
 ],
-answer:2
+answer:1,
+explanation:"Fundamental Rights are contained in Part III of the Constitution."
+}
+]
 },
 
 {
-q:"Which soil is most suitable for cotton cultivation?",
-options:[
-"Alluvial soil",
-"Black soil",
-"Laterite soil",
-"Red soil"
-],
-answer:1
-},
-
+title:"UPSC Test 2 – Geography",
+questions:[
 {
-q:"GDP stands for:",
+q:"Which is the longest river of India?",
 options:[
-"Gross Domestic Product",
-"General Domestic Production",
-"Gross Development Product",
-"General Development Production"
+"Ganga",
+"Yamuna",
+"Godavari",
+"Narmada"
 ],
-answer:0
+answer:0,
+explanation:"The Ganga is the longest river system in India."
 },
-
-{
-q:"Which gas is present in the largest proportion in Earth's atmosphere?",
-options:[
-"Oxygen",
-"Carbon dioxide",
-"Nitrogen",
-"Hydrogen"
-],
-answer:2
-},
-
-{
-q:"Who was the first President of India?",
-options:[
-"Dr. Rajendra Prasad",
-"Dr. S. Radhakrishnan",
-"Jawaharlal Nehru",
-"Sardar Patel"
-],
-answer:0
-},
-
 {
 q:"The Tropic of Cancer passes through how many Indian states?",
 options:[
@@ -566,520 +468,462 @@ options:[
 "8",
 "9"
 ],
-answer:2
+answer:2,
+explanation:"The Tropic of Cancer passes through 8 Indian states."
+}
+]
 },
 
 {
-q:"Planning Commission was replaced by:",
+title:"UPSC Test 3 – Modern History",
+questions:[
+{
+q:"The Revolt of 1857 started at:",
 options:[
-"Finance Commission",
-"NITI Aayog",
-"GST Council",
-"SEBI"
+"Delhi",
+"Meerut",
+"Kanpur",
+"Lucknow"
 ],
-answer:1
-},
-
-{
-q:"Which fundamental right is guaranteed under Article 21?",
-options:[
-"Right to Equality",
-"Right to Freedom",
-"Right to Life and Personal Liberty",
-"Right against Exploitation"
+answer:1,
+explanation:"The Revolt of 1857 began at Meerut on 10 May 1857."
+}
+]
+}
 ],
-answer:2
-},
 
+BPSC:[
 {
-q:"The Green Revolution in India is mainly associated with:",
+title:"BPSC Test 1 – Bihar Special",
+questions:[
+{
+q:"The capital of Bihar is:",
 options:[
-"Milk production",
-"Food grain production",
-"Fish production",
-"Oil production"
+"Gaya",
+"Patna",
+"Muzaffarpur",
+"Bhagalpur"
 ],
-answer:1
+answer:1,
+explanation:"Patna is the capital of Bihar."
 },
-
 {
-q:"Which planet is known as the Red Planet?",
+q:"Which river is known as the sorrow of Bihar?",
 options:[
-"Venus",
-"Mars",
-"Jupiter",
-"Mercury"
+"Ganga",
+"Kosi",
+"Son",
+"Gandak"
 ],
-answer:1
+answer:1,
+explanation:"The Kosi is traditionally known as the 'Sorrow of Bihar' because of its flooding."
+}
+]
 },
 
 {
-q:"Who founded the Mauryan Empire?",
+title:"BPSC Test 2 – Bihar History",
+questions:[
+{
+q:"Nalanda was an ancient centre of:",
 options:[
-"Ashoka",
-"Chandragupta Maurya",
-"Bindusara",
-"Harsha"
+"Trade",
+"Education",
+"Industry",
+"Administration"
 ],
-answer:1
+answer:1,
+explanation:"Nalanda was one of the most important ancient centres of higher learning."
+}
+]
 },
 
 {
-q:"The headquarters of the Reserve Bank of India is in:",
+title:"BPSC Test 3 – General Studies",
+questions:[
+{
+q:"The Constitution of India came into force on:",
 options:[
-"New Delhi",
-"Mumbai",
-"Kolkata",
-"Chennai"
+"26 November 1949",
+"15 August 1947",
+"26 January 1950",
+"2 October 1950"
 ],
-answer:1
+answer:2,
+explanation:"The Constitution came into force on 26 January 1950."
+}
+]
+}
+],
+
+UPPSC:[
+{
+title:"UPPSC Test 1 – Uttar Pradesh Special",
+questions:[
+{
+q:"The capital of Uttar Pradesh is:",
+options:[
+"Kanpur",
+"Prayagraj",
+"Lucknow",
+"Varanasi"
+],
+answer:2,
+explanation:"Lucknow is the capital of Uttar Pradesh."
+},
+{
+q:"Which city is known as the spiritual capital of India?",
+options:[
+"Agra",
+"Varanasi",
+"Kanpur",
+"Meerut"
+],
+answer:1,
+explanation:"Varanasi is widely known as a major spiritual centre of India."
+}
+]
 },
 
 {
-q:"Which constitutional body conducts elections in India?",
+title:"UPPSC Test 2 – Indian Polity",
+questions:[
+{
+q:"Who appoints the Governor of a state?",
 options:[
-"UPSC",
-"Election Commission of India",
-"Finance Commission",
+"Prime Minister",
+"Chief Minister",
+"President",
 "Parliament"
 ],
-answer:1
+answer:2,
+explanation:"The Governor of a state is appointed by the President of India."
+}
+]
 },
 
 {
-q:"Which ocean is the largest ocean on Earth?",
+title:"UPPSC Test 3 – Current Affairs",
+questions:[
+{
+q:"Current affairs questions primarily test:",
 options:[
-"Atlantic Ocean",
-"Indian Ocean",
-"Pacific Ocean",
-"Arctic Ocean"
+"Memory only",
+"Awareness of recent developments",
+"Mathematical ability",
+"Language skills"
 ],
-answer:2
+answer:1,
+explanation:"Current affairs tests awareness and understanding of recent developments."
 }
+]
+}
+],
 
-];
+SSC:[
+{
+title:"SSC Test 1 – General Awareness",
+questions:[
+{
+q:"Who is known as the Father of the Indian Constitution?",
+options:[
+"Mahatma Gandhi",
+"Dr. B. R. Ambedkar",
+"Jawaharlal Nehru",
+"Rajendra Prasad"
+],
+answer:1,
+explanation:"Dr. B. R. Ambedkar chaired the Drafting Committee."
+},
+{
+q:"What is the national animal of India?",
+options:[
+"Lion",
+"Tiger",
+"Elephant",
+"Leopard"
+],
+answer:1,
+explanation:"The Bengal Tiger is India's national animal."
+}
+]
+},
+
+{
+title:"SSC Test 2 – Science",
+questions:[
+{
+q:"The SI unit of force is:",
+options:[
+"Joule",
+"Watt",
+"Newton",
+"Pascal"
+],
+answer:2,
+explanation:"The SI unit of force is Newton."
+}
+]
+},
+
+{
+title:"SSC Test 3 – Current Affairs",
+questions:[
+{
+q:"Current Affairs mainly relates to:",
+options:[
+"Recent events",
+"Ancient history",
+"Only mathematics",
+"Grammar"
+],
+answer:0,
+explanation:"Current Affairs deals with recent national and international developments."
+}
+]
+}
+]
+
+};
 
 
-/* =========================
-VARIABLES
-========================= */
-
-let currentQuestion = 0;
-
-let userAnswers = new Array(questions.length).fill(null);
-
-let timeLeft = 20 * 60;
-
-let timerInterval;
-
-let selectedExam = "";
-
-let selectedSubject = "";
+let currentExam="";
+let currentTest=0;
+let currentQuestion=0;
+let userAnswers=[];
 
 
-/* =========================
-SELECT EXAM
-========================= */
+function showTests(exam){
 
-function selectExam(exam){
-
-selectedExam = exam;
+currentExam=exam;
 
 document.getElementById("home").classList.add("hidden");
+document.getElementById("quizSection").classList.add("hidden");
+document.getElementById("resultSection").classList.add("hidden");
 
-document.getElementById("subjectSection").classList.remove("hidden");
+document.getElementById("testSection").classList.remove("hidden");
 
 document.getElementById("examTitle").innerText =
-exam + " — Select Subject";
+exam + " Test Series";
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
+const list=document.getElementById("testList");
+
+list.innerHTML="";
+
+tests[exam].forEach((test,index)=>{
+
+const card=document.createElement("div");
+
+card.className="test-card";
+
+card.innerHTML=`
+
+<div>
+<h3>${test.title}</h3>
+<p>${test.questions.length} Questions • MCQ Practice</p>
+</div>
+
+<button onclick="startTest(${index})">
+Start Test
+</button>
+
+`;
+
+list.appendChild(card);
+
 });
 
 }
 
 
-/* =========================
-START TEST
-========================= */
+function startTest(index){
 
-function startTest(){
+currentTest=index;
+currentQuestion=0;
 
-selectedSubject =
-document.getElementById("subject").value;
+userAnswers=new Array(
+tests[currentExam][currentTest].questions.length
+).fill(null);
 
-currentQuestion = 0;
-
-userAnswers =
-new Array(questions.length).fill(null);
-
-timeLeft = 20 * 60;
-
-document.getElementById("subjectSection")
+document.getElementById("testSection")
 .classList.add("hidden");
 
 document.getElementById("resultSection")
 .classList.add("hidden");
 
-document.getElementById("testSection")
+document.getElementById("quizSection")
 .classList.remove("hidden");
 
-document.getElementById("testTitle").innerText =
-selectedExam + " — " + selectedSubject;
-
-showQuestion();
-
-startTimer();
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+loadQuestion();
 
 }
 
 
-/* =========================
-SHOW QUESTION
-========================= */
+function loadQuestion(){
 
-function showQuestion(){
+const test=tests[currentExam][currentTest];
 
-const q = questions[currentQuestion];
+const q=test.questions[currentQuestion];
 
-let html = "";
+document.getElementById("progress").innerText=
+`Question ${currentQuestion+1} of ${test.questions.length}`;
 
-html +=
-'<div class="question-number">Question '+
-(currentQuestion+1)+
-' of '+
-questions.length+
-'</div>';
+document.getElementById("question").innerText=q.q;
 
-html +=
-'<div class="question">'+
-q.q+
-'</div>';
+const options=document.getElementById("options");
+
+options.innerHTML="";
 
 q.options.forEach((option,index)=>{
 
-let checked =
-userAnswers[currentQuestion] === index
-? "checked"
-: "";
+const button=document.createElement("button");
 
-html +=
+button.className="option";
 
-'<label class="option">'+
+button.innerText=
+`${String.fromCharCode(65+index)}. ${option}`;
 
-'<input type="radio" name="answer" value="'+
-index+
-'" '+
-checked+
-' onchange="saveAnswer('+index+')">'+
+if(userAnswers[currentQuestion]===index){
+button.classList.add("selected");
+}
 
-option+
+button.onclick=()=>selectOption(index);
 
-'</label>';
+options.appendChild(button);
 
 });
 
-document.getElementById("questionArea").innerHTML =
-html;
-
-let progress =
-((currentQuestion+1)/questions.length)*100;
-
-document.getElementById("progressBar")
-.style.width = progress + "%";
-
 }
 
 
-/* =========================
-SAVE ANSWER
-========================= */
+function selectOption(index){
 
-function saveAnswer(index){
+userAnswers[currentQuestion]=index;
 
-userAnswers[currentQuestion] = index;
+loadQuestion();
 
 }
 
-
-/* =========================
-NEXT
-========================= */
 
 function nextQuestion(){
 
-if(currentQuestion < questions.length-1){
+const total=
+tests[currentExam][currentTest].questions.length;
+
+if(currentQuestion < total-1){
 
 currentQuestion++;
 
-showQuestion();
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+loadQuestion();
 
 }else{
 
-alert("This is the last question. You can submit the test.");
+finishTest();
 
 }
 
 }
 
-
-/* =========================
-PREVIOUS
-========================= */
 
 function previousQuestion(){
 
-if(currentQuestion > 0){
+if(currentQuestion>0){
 
 currentQuestion--;
 
-showQuestion();
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+loadQuestion();
 
 }
 
 }
 
 
-/* =========================
-TIMER
-========================= */
+function finishTest(){
 
-function startTimer(){
+const test=
+tests[currentExam][currentTest];
 
-clearInterval(timerInterval);
+let score=0;
 
-timerInterval =
-setInterval(function(){
+test.questions.forEach((q,i)=>{
 
-let minutes =
-Math.floor(timeLeft/60);
+if(userAnswers[i]===q.answer){
 
-let seconds =
-timeLeft%60;
-
-document.getElementById("timer").innerText =
-
-String(minutes).padStart(2,"0")+
-":"+
-String(seconds).padStart(2,"0");
-
-if(timeLeft <= 0){
-
-clearInterval(timerInterval);
-
-alert("Time is over!");
-
-submitTest();
-
-}
-
-timeLeft--;
-
-},1000);
-
-}
-
-
-/* =========================
-SUBMIT
-========================= */
-
-function submitTest(){
-
-clearInterval(timerInterval);
-
-let correct = 0;
-
-let wrong = 0;
-
-let skipped = 0;
-
-questions.forEach((q,index)=>{
-
-if(userAnswers[index] === null){
-
-skipped++;
-
-}
-
-else if(userAnswers[index] === q.answer){
-
-correct++;
-
-}
-
-else{
-
-wrong++;
+score++;
 
 }
 
 });
 
-
-/* +2 for correct
-   -0.66 for wrong */
-
-let score =
-(correct*2) -
-(wrong*(2/3));
-
-score =
-Math.max(0,score);
-
-score =
-score.toFixed(2);
-
-let accuracy =
-correct/questions.length*100;
-
-accuracy =
-accuracy.toFixed(1);
-
-
-document.getElementById("testSection")
+document.getElementById("quizSection")
 .classList.add("hidden");
 
 document.getElementById("resultSection")
 .classList.remove("hidden");
 
+document.getElementById("score").innerText=
+`${score} / ${test.questions.length}`;
 
-document.getElementById("score").innerText =
-score;
+let percentage=
+(score/test.questions.length)*100;
 
-document.getElementById("correct").innerText =
-correct;
+let message="Keep practising!";
 
-document.getElementById("wrong").innerText =
-wrong;
+if(percentage>=80){
+message="Excellent performance! 🎯";
+}
+else if(percentage>=60){
+message="Good performance! Keep improving. 👍";
+}
 
-document.getElementById("skipped").innerText =
-skipped;
+document.getElementById("resultMessage")
+.innerText=message;
 
-document.getElementById("accuracy").innerText =
-"Accuracy: "+accuracy+"%";
+const review=
+document.getElementById("answerReview");
 
+review.innerHTML="<h3>Answer Review</h3>";
 
-document.getElementById("review").innerHTML = "";
+test.questions.forEach((q,i)=>{
 
+const div=document.createElement("div");
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
+div.className="review-item "+
+(userAnswers[i]===q.answer?"correct":"wrong");
+
+div.innerHTML=`
+
+<strong>Q${i+1}. ${q.q}</strong>
+
+<p>
+Your Answer:
+${userAnswers[i]===null
+?"Not Attempted"
+:q.options[userAnswers[i]]}
+</p>
+
+<p>
+Correct Answer:
+<strong>${q.options[q.answer]}</strong>
+</p>
+
+<p>
+Explanation: ${q.explanation}
+</p>
+
+`;
+
+review.appendChild(div);
+
 });
 
 }
 
 
-/* =========================
-REVIEW
-========================= */
+function backToTests(){
 
-function showReview(){
-
-let html =
-"<h2>Answer Review</h2>";
-
-questions.forEach((q,index)=>{
-
-let answer =
-userAnswers[index];
-
-let status = "";
-
-let className = "";
-
-if(answer === null){
-
-status =
-"⏭️ Skipped";
-
-className =
-"skipped";
-
-}
-
-else if(answer === q.answer){
-
-status =
-"✅ Correct";
-
-className =
-"correct";
-
-}
-
-else{
-
-status =
-"❌ Wrong";
-
-className =
-"wrong";
-
-}
-
-
-html +=
-
-'<div class="review-item '+
-className+
-'">'+
-
-"<strong>Q"+
-(index+1)+
-". "+
-q.q+
-"</strong>"+
-
-"<br><br>"+
-
-"Your Answer: "+
-(answer === null
-? "Not Attempted"
-: q.options[answer])+
-
-"<br>"+
-
-"Correct Answer: "+
-q.options[q.answer]+
-
-"<br><br>"+
-
-status+
-
-"</div>";
-
-});
-
-
-document.getElementById("review")
-.innerHTML = html;
-
-}
-
-
-/* =========================
-REATTEMPT
-========================= */
-
-function restartTest(){
+document.getElementById("quizSection")
+.classList.add("hidden");
 
 document.getElementById("resultSection")
 .classList.add("hidden");
@@ -1087,21 +931,24 @@ document.getElementById("resultSection")
 document.getElementById("testSection")
 .classList.remove("hidden");
 
-currentQuestion = 0;
+showTests(currentExam);
 
-userAnswers =
-new Array(questions.length).fill(null);
+}
 
-timeLeft = 20*60;
 
-showQuestion();
+function goHome(){
 
-startTimer();
+document.getElementById("testSection")
+.classList.add("hidden");
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+document.getElementById("quizSection")
+.classList.add("hidden");
+
+document.getElementById("resultSection")
+.classList.add("hidden");
+
+document.getElementById("home")
+.classList.remove("hidden");
 
 }
 
