@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IAS & PCS Mentorship | Bilingual Test Series</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
@@ -26,7 +28,8 @@ button:hover{opacity:.9}
 .back-btn{margin-bottom:18px;background:#596273}
 .test-list{display:grid;gap:14px}
 .test-card{background:#fff;border-radius:15px;padding:20px;box-shadow:0 4px 14px #1720330d;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.test-card h3{margin-bottom:7px}.test-card p{color:#666;line-height:1.5}
+.test-card h3{margin-bottom:7px}
+.test-card p{color:#666;line-height:1.5}
 .quiz-box{background:#fff;padding:24px;border-radius:18px;box-shadow:0 8px 25px #17203312}
 .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:18px}
 .timer{font-weight:bold;color:#b4232e;border:2px solid #f3c7cb;padding:10px 14px;border-radius:10px}
@@ -36,64 +39,380 @@ button:hover{opacity:.9}
 .option.selected{background:#dce8ff;border-color:#14213d}
 .quiz-actions{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
 .hidden{display:none!important}
-.result{text-align:center}.score{font-size:42px;font-weight:bold;margin:16px}
-.review-item{text-align:left;background:#f7f7f7;padding:15px;margin:12px 0;border-radius:10px}
+.result{text-align:center}
+.score{font-size:42px;font-weight:bold;margin:16px}
+.review-item{text-align:left;background:#f7f7f7;padding:15px;margin:12px 0;border-radius:10px;white-space:pre-line}
 footer{margin-top:30px;background:#14213d;color:white;text-align:center;padding:22px;line-height:1.8}
-@media(max-width:700px){.exam-grid{grid-template-columns:1fr}.hero h2{font-size:27px}.section-title{font-size:25px}.test-card{flex-direction:column;align-items:flex-start}.test-card button{width:100%}.quiz-box{padding:17px}.quiz-actions button{width:48%}}
+
+@media(max-width:700px){
+.exam-grid{grid-template-columns:1fr}
+.hero h2{font-size:27px}
+.section-title{font-size:25px}
+.test-card{flex-direction:column;align-items:flex-start}
+.test-card button{width:100%}
+.quiz-box{padding:17px}
+.quiz-actions button{width:48%}
+}
 </style>
 </head>
+
 <body>
-<header><h1>IAS &amp; PCS Mentorship</h1><p>UPSC • BPSC • UPPSC • SSC • State PCS</p></header>
+
+<header>
+<h1>IAS &amp; PCS Mentorship</h1>
+<p>UPSC • BPSC • UPPSC • SSC • State PCS</p>
+</header>
+
 <main class="container">
+
 <section id="home">
 <div class="hero">
 <h2>📚 Competitive Exam Test Series</h2>
-<p>Practice exam-oriented MCQs for UPSC, BPSC, UPPSC and SSC.<br>UPSC, BPSC, UPPSC एवं SSC के लिए परीक्षा-उन्मुख MCQs का अभ्यास करें।</p>
+<p>
+Practice exam-oriented MCQs for UPSC, BPSC, UPPSC and SSC.<br>
+UPSC, BPSC, UPPSC एवं SSC के लिए परीक्षा-उन्मुख MCQs का अभ्यास करें।
+</p>
 </div>
+
 <h2 class="section-title">Choose Your Exam / अपनी परीक्षा चुनें</h2>
+
 <div class="exam-grid">
-<div class="exam-card" role="button" tabindex="0" onclick="showTests('UPSC')" onkeydown="if(event.key==='Enter')showTests('UPSC')"><div class="exam-icon">🏛️</div><h3>UPSC</h3><p>Civil Services Examination<br>सिविल सेवा परीक्षा</p><button type="button" onclick="event.stopPropagation();showTests('UPSC')">View Tests / टेस्ट देखें</button></div>
-<div class="exam-card" role="button" tabindex="0" onclick="showTests('BPSC')" onkeydown="if(event.key==='Enter')showTests('BPSC')"><div class="exam-icon">📘</div><h3>BPSC</h3><p>Bihar Public Service Commission<br>बिहार लोक सेवा आयोग</p><button type="button" onclick="event.stopPropagation();showTests('BPSC')">View Tests / टेस्ट देखें</button></div>
-<div class="exam-card" role="button" tabindex="0" onclick="showTests('UPPSC')" onkeydown="if(event.key==='Enter')showTests('UPPSC')"><div class="exam-icon">🗺️</div><h3>UPPSC</h3><p>Uttar Pradesh PCS<br>उत्तर प्रदेश पीसीएस</p><button type="button" onclick="event.stopPropagation();showTests('UPPSC')">View Tests / टेस्ट देखें</button></div>
-<div class="exam-card" role="button" tabindex="0" onclick="showTests('SSC')" onkeydown="if(event.key==='Enter')showTests('SSC')"><div class="exam-icon">📝</div><h3>SSC</h3><p>Staff Selection Commission<br>कर्मचारी चयन आयोग</p><button type="button" onclick="event.stopPropagation();showTests('SSC')">View Tests / टेस्ट देखें</button></div>
+
+<div class="exam-card" role="button" tabindex="0"
+onclick="showTests('UPSC')"
+onkeydown="if(event.key==='Enter')showTests('UPSC')">
+<div class="exam-icon">🏛️</div>
+<h3>UPSC</h3>
+<p>Civil Services Examination<br>सिविल सेवा परीक्षा</p>
+<button type="button" onclick="event.stopPropagation();showTests('UPSC')">View Tests / टेस्ट देखें</button>
+</div>
+
+<div class="exam-card" role="button" tabindex="0"
+onclick="showTests('BPSC')"
+onkeydown="if(event.key==='Enter')showTests('BPSC')">
+<div class="exam-icon">📘</div>
+<h3>BPSC</h3>
+<p>Bihar Public Service Commission<br>बिहार लोक सेवा आयोग</p>
+<button type="button" onclick="event.stopPropagation();showTests('BPSC')">View Tests / टेस्ट देखें</button>
+</div>
+
+<div class="exam-card" role="button" tabindex="0"
+onclick="showTests('UPPSC')"
+onkeydown="if(event.key==='Enter')showTests('UPPSC')">
+<div class="exam-icon">🗺️</div>
+<h3>UPPSC</h3>
+<p>Uttar Pradesh PCS<br>उत्तर प्रदेश पीसीएस</p>
+<button type="button" onclick="event.stopPropagation();showTests('UPPSC')">View Tests / टेस्ट देखें</button>
+</div>
+
+<div class="exam-card" role="button" tabindex="0"
+onclick="showTests('SSC')"
+onkeydown="if(event.key==='Enter')showTests('SSC')">
+<div class="exam-icon">📝</div>
+<h3>SSC</h3>
+<p>Staff Selection Commission<br>कर्मचारी चयन आयोग</p>
+<button type="button" onclick="event.stopPropagation();showTests('SSC')">View Tests / टेस्ट देखें</button>
+</div>
+
 </div>
 </section>
+
 <section id="tests" class="hidden">
 <button class="back-btn" onclick="goHome()">← Back / वापस</button>
-<h2 class="section-title" id="examTitle"></h2><div class="test-list" id="testList"></div>
+<h2 class="section-title" id="examTitle"></h2>
+<div class="test-list" id="testList"></div>
 </section>
+
 <section id="quiz" class="hidden">
 <div class="quiz-box">
-<div class="toolbar"><button class="back-btn" onclick="backToTests()">← Test List / टेस्ट सूची</button><span class="timer" id="timer">30:00</span></div>
-<div class="progress" id="progress"></div><div class="question" id="question"></div><div id="options"></div>
-<div class="quiz-actions"><button onclick="prevQuestion()">← Previous</button><button onclick="nextQuestion()">Next →</button></div>
-<div style="margin-top:18px"><button onclick="submitTest()">Submit Test / टेस्ट जमा करें</button></div>
+
+<div class="toolbar">
+<button class="back-btn" onclick="backToTests()">← Test List / टेस्ट सूची</button>
+<span class="timer" id="timer">30:00</span>
+</div>
+
+<div class="progress" id="progress"></div>
+<div class="question" id="question"></div>
+<div id="options"></div>
+
+<div class="quiz-actions">
+<button onclick="prevQuestion()">← Previous</button>
+<button onclick="nextQuestion()">Next →</button>
+</div>
+
+<div style="margin-top:18px">
+<button onclick="submitTest()">Submit Test / टेस्ट जमा करें</button>
+</div>
+
 </div>
 </section>
-<section id="result" class="hidden"><div class="panel result"><h2>Test Result / परीक्षा परिणाम</h2><div class="score" id="score"></div><p id="resultStats"></p><div id="review" class="answer-review"></div><button onclick="backToTests()">Back to Tests / टेस्ट पर वापस जाएँ</button></div></section>
+
+<section id="result" class="hidden">
+<div class="panel result">
+<h2>Test Result / परीक्षा परिणाम</h2>
+<div class="score" id="score"></div>
+<p id="resultStats"></p>
+<div id="review" class="answer-review"></div>
+<button onclick="backToTests()">Back to Tests / टेस्ट पर वापस जाएँ</button>
+</div>
+</section>
+
 </main>
-<footer>IAS &amp; PCS Mentorship<br>Learn • Practise • Improve</footer>
+
+<footer>
+IAS &amp; PCS Mentorship<br>
+Learn • Practise • Improve
+</footer>
+
 <script>
-const demoTests={
- UPSC:[{title:"UPSC Practice Test 1 – Polity (Demo)",questions:[
- {q:"The Constitution of India was adopted on / भारत का संविधान कब अंगीकृत किया गया?",o:["15 August 1947 / 15 अगस्त 1947","26 November 1949 / 26 नवम्बर 1949","26 January 1950 / 26 जनवरी 1950","2 October 1950 / 2 अक्टूबर 1950"],a:1,e:"The Constituent Assembly adopted the Constitution on 26 November 1949. It came into force on 26 January 1950. / संविधान सभा ने 26 नवम्बर 1949 को संविधान अंगीकृत किया; यह 26 जनवरी 1950 को लागू हुआ।"},
- {q:"Which is the guardian of the Constitution? / संविधान का संरक्षक किसे माना जाता है?",o:["Parliament / संसद","Supreme Court / सर्वोच्च न्यायालय","President / राष्ट्रपति","Election Commission / निर्वाचन आयोग"],a:1,e:"The Supreme Court protects and interprets the Constitution through judicial review. / सर्वोच्च न्यायालय न्यायिक समीक्षा द्वारा संविधान की रक्षा और व्याख्या करता है।"}]}],
- BPSC:[{title:"71st BPSC Prelims 2025 – MCQ Test",questions:[
- {q:"This test section is a setup check. The full 150-question paper must be added to the question data before publishing. / यह सेटअप जाँच है। प्रकाशित करने से पहले पूरे 150 प्रश्न जोड़ना आवश्यक है।",o:["Continue / आगे बढ़ें","Stop / रोकें","Review setup / सेटअप देखें","None / कोई नहीं"],a:2,e:"This placeholder verifies that the website's exam cards, navigation, answer selection and scoring work. It is not an actual BPSC question. / यह प्लेसहोल्डर वेबसाइट के कार्ड, नेविगेशन और स्कोरिंग की जाँच करता है; यह वास्तविक BPSC प्रश्न नहीं है।"}]}],
- UPPSC:[{title:"UPPSC Practice Test 1 (Demo)",questions:[{q:"The capital of Uttar Pradesh is / उत्तर प्रदेश की राजधानी है:",o:["Agra / आगरा","Lucknow / लखनऊ","Kanpur / कानपुर","Varanasi / वाराणसी"],a:1,e:"Lucknow is the capital of Uttar Pradesh. / लखनऊ उत्तर प्रदेश की राजधानी है।"}]}],
- SSC:[{title:"SSC Practice Test 1 (Demo)",questions:[{q:"What is 15% of 200? / 200 का 15% कितना है?",o:["20","25","30","35"],a:2,e:"15% of 200 = 0.15 × 200 = 30. / 200 का 15% = 0.15 × 200 = 30।"}]}]
+const demoTests = {
+UPSC: [{
+title: "UPSC Practice Test 1 – Polity (Demo)",
+questions: [
+{
+q: "The Constitution of India was adopted on / भारत का संविधान कब अंगीकृत किया गया?",
+o: [
+"15 August 1947 / 15 अगस्त 1947",
+"26 November 1949 / 26 नवम्बर 1949",
+"26 January 1950 / 26 जनवरी 1950",
+"2 October 1950 / 2 अक्टूबर 1950"
+],
+a: 1,
+e: "The Constituent Assembly adopted the Constitution on 26 November 1949. It came into force on 26 January 1950. / संविधान सभा ने 26 नवम्बर 1949 को संविधान अंगीकृत किया; यह 26 जनवरी 1950 को लागू हुआ।"
+},
+{
+q: "Which is the guardian of the Constitution? / संविधान का संरक्षक किसे माना जाता है?",
+o: [
+"Parliament / संसद",
+"Supreme Court / सर्वोच्च न्यायालय",
+"President / राष्ट्रपति",
+"Election Commission / निर्वाचन आयोग"
+],
+a: 1,
+e: "The Supreme Court protects and interprets the Constitution through judicial review. / सर्वोच्च न्यायालय न्यायिक समीक्षा द्वारा संविधान की रक्षा और व्याख्या करता है।"
+}
+]
+}],
+
+BPSC: [{
+title: "71st BPSC Prelims 2025 – MCQ Test",
+questions: [{
+q: "This test section is a setup check. The full 150-question paper must be added to the question data before publishing. / यह सेटअप जाँच है। प्रकाशित करने से पहले पूरे 150 प्रश्न जोड़ना आवश्यक है।",
+o: [
+"Continue / आगे बढ़ें",
+"Stop / रोकें",
+"Review setup / सेटअप देखें",
+"None / कोई नहीं"
+],
+a: 2,
+e: "This placeholder verifies that the website's exam cards, navigation, answer selection and scoring work. It is not an actual BPSC question. / यह प्लेसहोल्डर वेबसाइट के कार्ड, नेविगेशन और स्कोरिंग की जाँच करता है; यह वास्तविक BPSC प्रश्न नहीं है।"
+}]
+}],
+
+UPPSC: [{
+title: "UPPSC Practice Test 1 (Demo)",
+questions: [{
+q: "The capital of Uttar Pradesh is / उत्तर प्रदेश की राजधानी है:",
+o: [
+"Agra / आगरा",
+"Lucknow / लखनऊ",
+"Kanpur / कानपुर",
+"Varanasi / वाराणसी"
+],
+a: 1,
+e: "Lucknow is the capital of Uttar Pradesh. / लखनऊ उत्तर प्रदेश की राजधानी है।"
+}]
+}],
+
+SSC: [{
+title: "SSC Practice Test 1 (Demo)",
+questions: [{
+q: "What is 15% of 200? / 200 का 15% कितना है?",
+o: ["20", "25", "30", "35"],
+a: 2,
+e: "15% of 200 = 0.15 × 200 = 30. / 200 का 15% = 0.15 × 200 = 30।"
+}]
+}]
 };
-let activeExam="",activeTest=null,answers=[],idx=0,seconds=1800,clock=null,submitted=false;
-function show(id){["home","tests","quiz","result"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));window.scrollTo(0,0)}
-function showTests(exam){activeExam=exam;document.getElementById("examTitle").textContent=exam+" Test Series / टेस्ट सीरीज़";const list=document.getElementById("testList");list.innerHTML="";(demoTests[exam]||[]).forEach((t,i)=>{const card=document.createElement("div");card.className="test-card";const info=document.createElement("div");const h=document.createElement("h3");h.textContent=t.title;const p=document.createElement("p");p.textContent=t.questions.length+" questions / प्रश्न";info.append(h,p);const b=document.createElement("button");b.textContent="Start Test / टेस्ट शुरू करें";b.onclick=()=>startTest(i);card.append(info,b);list.append(card)});show("tests")}
-function goHome(){if(clock)clearInterval(clock);show("home")}
-function backToTests(){if(clock)clearInterval(clock);showTests(activeExam)}
-function startTest(i){activeTest=demoTests[activeExam][i];answers=Array(activeTest.questions.length).fill(null);idx=0;seconds=1800;submitted=false;show("quiz");renderQuestion();updateTimer();if(clock)clearInterval(clock);clock=setInterval(()=>{seconds--;updateTimer();if(seconds<=0)submitTest()},1000)}
-function updateTimer(){document.getElementById("timer").textContent=String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0")}
-function renderQuestion(){const q=activeTest.questions[idx];document.getElementById("progress").textContent="Question "+(idx+1)+" of "+activeTest.questions.length+" / प्रश्न "+(idx+1)+" / "+activeTest.questions.length;document.getElementById("question").textContent=q.q;const box=document.getElementById("options");box.innerHTML="";q.o.forEach((opt,j)=>{const b=document.createElement("button");b.className="option"+(answers[idx]===j?" selected":"");b.textContent=String.fromCharCode(65+j)+". "+opt;b.onclick=()=>{answers[idx]=j;renderQuestion()};box.append(b)})}
-function prevQuestion(){if(idx>0){idx--;renderQuestion()}}
-function nextQuestion(){if(idx<activeTest.questions.length-1){idx++;renderQuestion()}else alert("You are on the last question. Submit when ready. / यह अंतिम प्रश्न है। तैयार होने पर जमा करें।")}
-function submitTest(){if(submitted)return;submitted=true;if(clock)clearInterval(clock);let correct=0,wrong=0,blank=0;activeTest.questions.forEach((q,i)=>{if(answers[i]===null)blank++;else if(answers[i]===q.a)correct++;else wrong++});const score=correct-wrong/3;document.getElementById("score").textContent=score.toFixed(2)+" / "+activeTest.questions.length;document.getElementById("resultStats").textContent="Correct: "+correct+" | Wrong: "+wrong+" | Unattempted: "+blank;const review=document.getElementById("review");review.innerHTML="<h3>Answer Review / उत्तर समीक्षा</h3>";activeTest.questions.forEach((q,i)=>{const d=document.createElement("div");d.className="review-item";const status=answers[i]===null?"Unattempted / अनुत्तरित":answers[i]===q.a?"Correct / सही":"Wrong / गलत";d.textContent="Q"+(i+1)+": "+q.q+"\\nYour answer: "+(answers[i]===null?"—":q.o[answers[i]])+"\\nCorrect answer: "+q.o[q.a]+"\\nStatus: "+status+"\\nExplanation: "+q.e;review.append(d)});show("result")}
+
+let activeExam = "";
+let activeTest = null;
+let answers = [];
+let idx = 0;
+let seconds = 1800;
+let clock = null;
+let submitted = false;
+
+function show(id) {
+["home", "tests", "quiz", "result"].forEach(x =>
+document.getElementById(x).classList.toggle("hidden", x !== id)
+);
+window.scrollTo(0, 0);
+}
+
+function showTests(exam) {
+activeExam = exam;
+document.getElementById("examTitle").textContent =
+exam + " Test Series / टेस्ट सीरीज़";
+
+const list = document.getElementById("testList");
+list.innerHTML = "";
+
+(demoTests[exam] || []).forEach((t, i) => {
+const card = document.createElement("div");
+card.className = "test-card";
+
+const info = document.createElement("div");
+const h = document.createElement("h3");
+h.textContent = t.title;
+
+const p = document.createElement("p");
+p.textContent = t.questions.length + " questions / प्रश्न";
+
+info.append(h, p);
+
+const b = document.createElement("button");
+b.textContent = "Start Test / टेस्ट शुरू करें";
+b.onclick = () => startTest(i);
+
+card.append(info, b);
+list.append(card);
+});
+
+show("tests");
+}
+
+function goHome() {
+if (clock) clearInterval(clock);
+show("home");
+}
+
+function backToTests() {
+if (clock) clearInterval(clock);
+showTests(activeExam);
+}
+
+function startTest(i) {
+activeTest = demoTests[activeExam][i];
+answers = Array(activeTest.questions.length).fill(null);
+idx = 0;
+seconds = 1800;
+submitted = false;
+
+show("quiz");
+renderQuestion();
+updateTimer();
+
+if (clock) clearInterval(clock);
+
+clock = setInterval(() => {
+seconds--;
+updateTimer();
+if (seconds <= 0) submitTest();
+}, 1000);
+}
+
+function updateTimer() {
+document.getElementById("timer").textContent =
+String(Math.floor(seconds / 60)).padStart(2, "0") +
+":" +
+String(seconds % 60).padStart(2, "0");
+}
+
+function renderQuestion() {
+const q = activeTest.questions[idx];
+
+document.getElementById("progress").textContent =
+"Question " + (idx + 1) + " of " +
+activeTest.questions.length +
+" / प्रश्न " + (idx + 1) + " / " +
+activeTest.questions.length;
+
+document.getElementById("question").textContent = q.q;
+
+const box = document.getElementById("options");
+box.innerHTML = "";
+
+q.o.forEach((opt, j) => {
+const b = document.createElement("button");
+b.className = "option" +
+(answers[idx] === j ? " selected" : "");
+b.textContent = String.fromCharCode(65 + j) + ". " + opt;
+b.onclick = () => {
+answers[idx] = j;
+renderQuestion();
+};
+box.append(b);
+});
+}
+
+function prevQuestion() {
+if (idx > 0) {
+idx--;
+renderQuestion();
+}
+}
+
+function nextQuestion() {
+if (idx < activeTest.questions.length - 1) {
+idx++;
+renderQuestion();
+} else {
+alert("You are on the last question. Submit when ready. / यह अंतिम प्रश्न है। तैयार होने पर जमा करें।");
+}
+}
+
+function submitTest() {
+if (submitted) return;
+
+submitted = true;
+if (clock) clearInterval(clock);
+
+let correct = 0, wrong = 0, blank = 0;
+
+activeTest.questions.forEach((q, i) => {
+if (answers[i] === null) blank++;
+else if (answers[i] === q.a) correct++;
+else wrong++;
+});
+
+const score = correct - wrong / 3;
+
+document.getElementById("score").textContent =
+score.toFixed(2) + " / " + activeTest.questions.length;
+
+document.getElementById("resultStats").textContent =
+"Correct: " + correct +
+" | Wrong: " + wrong +
+" | Unattempted: " + blank;
+
+const review = document.getElementById("review");
+review.innerHTML = "<h3>Answer Review / उत्तर समीक्षा</h3>";
+
+activeTest.questions.forEach((q, i) => {
+const d = document.createElement("div");
+d.className = "review-item";
+
+const status = answers[i] === null
+? "Unattempted / अनुत्तरित"
+: answers[i] === q.a
+? "Correct / सही"
+: "Wrong / गलत";
+
+d.textContent =
+"Q" + (i + 1) + ": " + q.q +
+"\nYour answer: " +
+(answers[i] === null ? "—" : q.o[answers[i]]) +
+"\nCorrect answer: " + q.o[q.a] +
+"\nStatus: " + status +
+"\nExplanation: " + q.e;
+
+review.append(d);
+});
+
+show("result");
+}
 </script>
+
 </body>
 </html>
